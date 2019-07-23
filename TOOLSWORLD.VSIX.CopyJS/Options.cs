@@ -1,5 +1,5 @@
 ﻿//------------------------------------------------------------------------------
-// <copyright file="CopyJSFilePackage.cs" company="Company">
+// <copyright file="Options.cs" company="Company">
 //     Copyright (c) Company.  All rights reserved.
 // </copyright>
 //------------------------------------------------------------------------------
@@ -36,29 +36,21 @@ namespace TOOLSWORLD.VSIX.CopyJS
     /// To get loaded into VS, the package must be referred by &lt;Asset Type="Microsoft.VisualStudio.VsPackage" ...&gt; in .vsixmanifest file.
     /// </para>
     /// </remarks>
-    //[PackageRegistration(UseManagedResourcesOnly = true)]
-    //[InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)] // Info on this package for Help/About
-    //[ProvideMenuResource("Menus.ctmenu", 1)]
-    //[Guid(CopyJSFilePackage.PackageGuidString)]
-    //[SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
-    [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid(CopyJSFilePackage.PackageGuidString)]
-    [ProvideOptionPage(typeof(OptionPageGrid),"CopyJS in Sharepoint", "Settings", 0, 0, true)]
-
-    public sealed class CopyJSFilePackage : Package
+    [InstalledProductRegistration("#1110", "#1112", "1.0", IconResourceID = 1400)] // Info on this package for Help/About
+    [Guid(Options.PackageGuidString)]
+    [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
+    public sealed class Options : Package
     {
         /// <summary>
-        /// CopyJSFilePackage GUID string.
+        /// Options GUID string.
         /// </summary>
-        public const string PackageGuidString = "72933784-610d-4474-bed8-e22db033f4b4";
+        public const string PackageGuidString = "2e322489-44a8-4528-93b0-11fd33603854";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CopyJSFile"/> class.
+        /// Initializes a new instance of the <see cref="Options"/> class.
         /// </summary>
-        public CopyJSFilePackage()
+        public Options()
         {
             // Inside this method you can place any initialization code that does not require
             // any Visual Studio service because at this point the package object is created but
@@ -74,7 +66,6 @@ namespace TOOLSWORLD.VSIX.CopyJS
         /// </summary>
         protected override void Initialize()
         {
-            CopyJSFile.Initialize(this);
             base.Initialize();
         }
 

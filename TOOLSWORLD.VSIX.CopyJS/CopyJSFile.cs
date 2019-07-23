@@ -96,14 +96,17 @@ namespace TOOLSWORLD.VSIX.CopyJS
         /// <param name="e">Event args.</param>
         private void MenuItemCallback(object sender, EventArgs e)
         {
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "CopyJSFile";
+            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);          
 
             string fileLinkFrom  = GetSourceFilePath();
 
-            string folderTo = @"C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\TEMPLATE\LAYOUTS\jQuery\IAP\Test\";
+            string title = Path.GetFileName(fileLinkFrom);            
 
-            message = "Файл скопирован в " + folderTo;            
+            CopyJSFilePackage options = this.package as CopyJSFilePackage;
+
+            string folderTo = options.FolderTo;
+
+            message = "Copy done in Sharepoint Folder:" + folderTo;            
 
             CopyFile(fileLinkFrom, folderTo);
 

@@ -87,7 +87,7 @@ namespace TOOLSWORLD.VSIX.CopyJS
             [Category("Settings")]
             [DisplayName("Folder")]
             [Description("Destination folder in Sharepoint environment")]
-            public string ForlderTo
+            public string FolderTo
             {
                 get { return folderTo; }
                 set { folderTo = value; }
@@ -99,7 +99,7 @@ namespace TOOLSWORLD.VSIX.CopyJS
             get
             {
                 OptionPageGrid page = (OptionPageGrid)GetDialogPage(typeof(OptionPageGrid));
-                return page.ForlderTo;
+                return page.FolderTo;
             }
         }
     }
